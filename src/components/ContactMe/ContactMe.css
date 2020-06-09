@@ -1,0 +1,68 @@
+
+
+.contact-me.outer-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 0 10px;
+}
+
+.contact-me.outer-container[name='false'] {
+    background-color: #04bccb;
+}
+
+.contact-me-header h1 {
+    margin: 0;
+}
+
+.contact-me-header[name='false'] h1 {
+    color: white;
+}
+
+.contact-me-sub-header h3 {
+    margin: 0;
+    color: grey;
+}
+
+.contact-me-sub-header[name='false'] h3 {
+    color: black;
+}
+
+.contact-me-button button {
+    background-color: #04bccb;
+    border: 1px solid #04bccb;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 20px 0 0;
+    transition: 0.3s ease;
+}
+
+.contact-me-button button:hover {
+    background-color: black;
+    border: 1px solid black;
+}
+
+.contact-me-button[name='false'] button {
+    background-color: black;
+    border: 1px solid black;
+}
+
+.contact-me-button[name='false'] button:hover {
+    background-color: white;
+    border: 1px solid white;
+}
+
+.contact-me-button button h3 {
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.contact-me-button[name='false'] button h3 {
+    color: #04bccb;
+}
