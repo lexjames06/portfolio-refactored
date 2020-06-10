@@ -169,7 +169,7 @@ export default function GetPictureTiles({
         }
 
         function mobileExpand(chosenIndex) {
-            if (window.innerWidth < 800) {
+            if (window.innerWidth < 1000) {
                 setShowTile1Details(chosenIndex === 0 ? showTile1Details === true ? false : true : false);
                 setShowTile2Details(chosenIndex === 1 ? showTile2Details === true ? false : true : false);
                 setShowTile3Details(chosenIndex === 2 ? showTile3Details === true ? false : true : false);
@@ -180,7 +180,7 @@ export default function GetPictureTiles({
         }
 
         function infoButton() {
-            if (window.innerWidth < 800) {
+            if (window.innerWidth < 1000) {
                 return (
                     <div className='info-button'>
                         <InfoButton />
@@ -190,7 +190,7 @@ export default function GetPictureTiles({
         }
 
         return (
-            <>
+            <div className='gallery-tile-container'>
                 <div
                     className='gallery tile'
                     name={`${isExpanded}`}
@@ -223,7 +223,7 @@ export default function GetPictureTiles({
                     </div>
                 </div>
                 {mobileDetails(index)}
-            </>
+            </div>
         );
     });
 }

@@ -14,6 +14,7 @@
 }
 
 .menu.outer-container img {
+    height: 100%;
     position: absolute;
     opacity: 0.3;
     z-index: 0;
@@ -32,6 +33,10 @@
     z-index: 1;
 }
 
+.menu.inner-container {
+    margin-top: -30px;
+}
+
 .menu.link:hover h1 {
     color: #04bccb;
 }
@@ -39,6 +44,7 @@
 .menu.link h1 {
     font-family: 'Rajdhani', sans-serif;
     color: white;
+    margin: 0;
 }
 
 .menu.outer-container .close-button {
