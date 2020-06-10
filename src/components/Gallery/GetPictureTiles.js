@@ -22,10 +22,24 @@ export default function GetPictureTiles({
 
     const technologyIcons = [javaScript, react, node, flutter, firebase, mongo];
 
-    const [showDetails, setShowDetails] = useState(false);
+    const [showTile1Details, setShowTile1Details] = useState(false);
+    const [showTile2Details, setShowTile2Details] = useState(false);
+    const [showTile3Details, setShowTile3Details] = useState(false);
+    const [showTile4Details, setShowTile4Details] = useState(false);
+    const [showTile5Details, setShowTile5Details] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     let projectsToMap = [];
+
+    let showDetails = showTile1Details || showTile2Details || showTile3Details || showTile4Details || showTile5Details;
+
+    let projectsDetailsVisibility = [
+        showTile1Details,
+        showTile2Details,
+        showTile3Details,
+        showTile4Details,
+        showTile5Details,
+    ];
 
     if (selectedTech !== 'all') {
         projectsToMap = projects.filter(project => {
@@ -89,7 +103,7 @@ export default function GetPictureTiles({
         }
 
         function displayLinks() {
-            if (isExpanded || showDetails) {
+            if (isExpanded || projectsDetailsVisibility[index]) {
                 return (
                     <div className='project-links'>
                         <div className='link github'>
@@ -141,7 +155,7 @@ export default function GetPictureTiles({
             return (
                 <div
                     className='mobile-expand-details'
-                    id={index === selectedIndex ? `${showDetails}` : 'false'}
+                    id={`${projectsDetailsVisibility[index]}`}
                     key={project.name}
                 >
                     <div className='project-title'>
@@ -156,7 +170,11 @@ export default function GetPictureTiles({
 
         function mobileExpand(chosenIndex) {
             if (window.innerWidth < 800) {
-                setShowDetails(!showDetails);
+                setShowTile1Details(chosenIndex === 0 ? showTile1Details === true ? false : true : false);
+                setShowTile2Details(chosenIndex === 1 ? showTile2Details === true ? false : true : false);
+                setShowTile3Details(chosenIndex === 2 ? showTile3Details === true ? false : true : false);
+                setShowTile4Details(chosenIndex === 3 ? showTile4Details === true ? false : true : false);
+                setShowTile5Details(chosenIndex === 4 ? showTile5Details === true ? false : true : false);
                 setSelectedIndex(chosenIndex);
             }
         }
