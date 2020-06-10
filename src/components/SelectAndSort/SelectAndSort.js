@@ -18,6 +18,7 @@ export default function SelectAndSort({
                         className='option'
                         name={`${item.selectedStatus}`}
                         onClick={toggleSidebar}
+                        key={index}
                     >
                         <h3>{item.name}</h3>
                     </div>
@@ -27,6 +28,7 @@ export default function SelectAndSort({
                     <div
                         className='option'
                         name={`${item.selectedStatus}`}
+                        key={index}
                         onClick={() => {
                             toggleSelected(item.name);
                             toggleProjects();
@@ -44,6 +46,7 @@ export default function SelectAndSort({
             <div
                 className='option'
                 name={`${item.selectedStatus}`}
+                key={index}
                 onClick={() => {
                     toggleSelected(item.name);
                     toggleProjects();

@@ -25,7 +25,7 @@ export default function Background() {
 
     function getTechIcons() {
         return techIcons.map(icon => {
-            return <>{icon.svg}</>;
+            return <div key={icon.name}>{icon.svg}</div>;
         });
     }
 

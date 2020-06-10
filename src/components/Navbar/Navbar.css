@@ -29,11 +29,9 @@
     align-items: center;
 }
 
-.navbar-icon {
+.navbar.inner-container .navbar-icon {
     height: 100%;
     width: auto;
-    display: flex;
-    align-items: center;
 }
 
 .hamburger-container {

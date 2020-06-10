@@ -2,7 +2,6 @@ import React from 'react';
 import bg from '../../assets/images/background_4.png';
 
 import './Menu.css';
-import HamburgerIcon from '../Navbar/HamburgerIcon';
 import CloseButton from '../../assets/icons/CloseButton';
 
 export default function Menu({ isMenuVisible, toggleMenu }) {

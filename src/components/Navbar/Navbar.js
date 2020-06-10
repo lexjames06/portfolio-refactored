@@ -14,12 +14,14 @@ export default function Navbar() {
     }
 
     return (
-        <div className='navbar outer-container' id='projects'>
+        <div className='navbar outer-container'>
             <div className='navbar middle-container'>
                 <div className='navbar inner-container'>
-                    <div className='navbar-icon'>
-                        <Logo />
-                    </div>
+                        <div className='navbar-icon'>
+                    <a href='#top'>
+                            <Logo />
+                    </a>
+                        </div>
                     <div className='navbar-icon'>
                         <HamburgerIcon toggleMenu={() => toggleMenu()} />
                     </div>

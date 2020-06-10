@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import basketballImage from '../../assets/images/basketball.png';
 import podcastImage from '../../assets/images/podcast.png';
 import codingImage from '../../assets/images/coding.png';
@@ -42,6 +42,7 @@ export default function AboutMe() {
             if(icon.name === selectedIcon) {
                 return (
                     <div 
+                        key={icon.name}
                         className='about-me-icon'
                         id='true'
                         onClick={() => toggleSelectedIcon(icon.name)}>
@@ -51,6 +52,7 @@ export default function AboutMe() {
             } else {
                 return (
                     <div 
+                        key={icon.name}
                         className='about-me-icon'
                         id='false'
                         onClick={() => toggleSelectedIcon(icon.name)}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import JavaScriptSVG from '../../assets/SVGs/JavaScript';
 import ReactSVG from '../../assets/SVGs/React';
 import NodeSVG from '../../assets/SVGs/Node';
@@ -87,14 +87,14 @@ export default function GetPictureTiles({
                 return (
                     <div className='project-links'>
                         <div className='link github'>
-                            <a href='https://www.google.com' target='_blank'>
+                            <a href='https://www.google.com' target='_blank' rel="noopener noreferrer">
                                 <button>
                                     <h3>GITHUB</h3>
                                 </button>
                             </a>
                         </div>
                         <div className='link website'>
-                            <a href='https://www.google.com' target='_blank'>
+                            <a href='https://www.google.com' target='_blank' rel="noopener noreferrer">
                                 <button>
                                     <h3>WEBSITE</h3>
                                 </button>
@@ -138,6 +138,7 @@ export default function GetPictureTiles({
                 <div
                     className='mobile-expand-details'
                     id={index === selectedIndex ? `${showDetails}` : 'false'}
+                    key={project.name}
                 >
                     <div className='project-title'>
                         <h2>{project.title}</h2>
@@ -172,7 +173,7 @@ export default function GetPictureTiles({
                     className='gallery tile'
                     name={`${isExpanded}`}
                     id={lightTile ? 'true' : 'false'}
-                    key={index}
+                    key={project.name}
                     onClick={() => mobileExpand(index)}
                 >
                     {infoButton()}

@@ -9,8 +9,9 @@ import './App.css';
 
 function App() {
     return (
-        <div className='App'>
+        <div className='App' id='top'>
             <Background />
+            <div id='projects'></div>
             <Navbar />
             <Gallery />
             <ContactMe id={false} />

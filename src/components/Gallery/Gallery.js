@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import tile_1 from '../../assets/images/phone_black_tile.png';
-import tile_2 from '../../assets/images/phone_white_tile.png';
-import tile_3 from '../../assets/images/phone_black_tile_hover.png';
-import tile_4 from '../../assets/images/phone_white_tile_hover.png';
-import kodflix1 from '../../assets/images/kodflix_light_1.png';
-import kodflix2 from '../../assets/images/kodflix_light_2.png';
-import kodflix3 from '../../assets/images/kodflix_dark_1.png';
-import kodflix4 from '../../assets/images/kodflix_dark_2.png';
+import React, { useState, useEffect, useCallback } from 'react';
+
 
 import './Gallery.css';
 import GetPictureTiles from './GetPictureTiles';
 import SelectAndSort from '../SelectAndSort/SelectAndSort';
+import ImportedProjects from '../Data/projects'
 
 export default function Gallery() {
     const [tileOneExpanded, setTileOneExpanded] = useState(false);
@@ -18,48 +12,7 @@ export default function Gallery() {
     const [tileThreeExpanded, setTileThreeExpanded] = useState(false);
     const [tileFourExpanded, setTileFourExpanded] = useState(false);
 
-    const projects = [
-        {
-            title: 'Fit-4-You',
-            description: 'A fitness phone app',
-            light1: tile_2,
-            light2: tile_4,
-            dark1: tile_1,
-            dark2: tile_3,
-            isExpanded: tileOneExpanded,
-            technologies: ['flutter', 'firebase'],
-        },
-        {
-            title: 'Paper Weather',
-            description: 'A simple weather phone app',
-            light1: tile_2,
-            light2: tile_4,
-            dark1: tile_1,
-            dark2: tile_3,
-            isExpanded: tileTwoExpanded,
-            technologies: ['flutter'],
-        },
-        {
-            title: 'Kodflix',
-            description: 'A video streaming web app',
-            light1: kodflix1,
-            light2: kodflix2,
-            dark1: kodflix3,
-            dark2: kodflix4,
-            isExpanded: tileThreeExpanded,
-            technologies: ['javascript', 'react', 'node'],
-        },
-        {
-            title: 'The Quiet Room',
-            description: 'A real-time chat app',
-            light1: tile_2,
-            light2: tile_4,
-            dark1: tile_1,
-            dark2: tile_3,
-            isExpanded: tileFourExpanded,
-            technologies: ['flutter', 'firebase'],
-        },
-    ];
+    const projects = ImportedProjects(tileOneExpanded, tileTwoExpanded, tileThreeExpanded, tileFourExpanded);
 
     function toggleTileExpand(selectedIndex) {
         setTileOneExpanded(selectedIndex === 0 ? true : false);
@@ -68,20 +21,13 @@ export default function Gallery() {
         setTileFourExpanded(selectedIndex === 3 ? true : false);
     }
 
-    function toggleTileCollapse() {
-        setTileOneExpanded(false);
-        setTileTwoExpanded(false);
-        setTileThreeExpanded(false);
-        setTileFourExpanded(false);
-    }
-
     const [javaScriptSelected, setJavaScriptSelected] = useState(false);
     const [reactSelected, setReactSelected] = useState(false);
-    const [flutterSelected, setFlutterSelected] = useState(true);
+    const [flutterSelected, setFlutterSelected] = useState(false);
     const [nodeSelected, setNodeSelected] = useState(false);
     const [firebaseSelected, setFirebaseSelected] = useState(false);
     const [dockerSelected, setDockerSelected] = useState(false);
-    const [allTechSelected, setAllTechSelected] = useState(false);
+    const [allTechSelected, setAllTechSelected] = useState(true);
 
     const technologies = [
         { name: 'JavaScript', selectedStatus: javaScriptSelected },
@@ -123,9 +69,11 @@ export default function Gallery() {
         setSelectedTech(chosenTech.name.toLowerCase());
     }
 
+    let toggleActiveProjects = useCallback(() => toggleProjects(), [selectedTech, technologies]);
+
     useEffect(() => {
-        toggleProjects();
-    }, [selectedTech, technologies]);
+        toggleActiveProjects();
+    }, [toggleActiveProjects]);
 
     return (
         <>
@@ -157,7 +105,7 @@ export default function Gallery() {
                         toggleTileExpand={selectedIndex =>
                             toggleTileExpand(selectedIndex)
                         }
-                        toggleTileCollapse={() => toggleTileCollapse()}
+                        
                     />
                 </div>
             </div>
