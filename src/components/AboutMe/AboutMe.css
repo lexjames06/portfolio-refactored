@@ -84,7 +84,7 @@
     text-align: left;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
     .about-me.details {
         flex-direction: column-reverse;
     }
