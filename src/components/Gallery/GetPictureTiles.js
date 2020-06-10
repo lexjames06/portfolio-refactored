@@ -4,7 +4,7 @@ import ReactSVG from '../../assets/SVGs/React';
 import NodeSVG from '../../assets/SVGs/Node';
 import FlutterSVG from '../../assets/SVGs/Flutter';
 import FirebaseSVG from '../../assets/SVGs/Firebase';
-import DockerSVG from '../../assets/SVGs/Docker';
+import MongoSVG from '../../assets/SVGs/MongoDB';
 import CloseButton from '../../assets/icons/CloseButton';
 import InfoButton from '../../assets/icons/InfoButton';
 
@@ -12,23 +12,15 @@ export default function GetPictureTiles({
     selectedTech,
     projects,
     toggleTileExpand,
-    toggleTileCollapse,
 }) {
     const javaScript = { name: 'javascript', svg: JavaScriptSVG() };
     const react = { name: 'react', svg: ReactSVG() };
     const node = { name: 'node', svg: NodeSVG() };
     const flutter = { name: 'flutter', svg: FlutterSVG() };
     const firebase = { name: 'firebase', svg: FirebaseSVG() };
-    const docker = { name: 'docker', svg: DockerSVG() };
+    const mongo = { name: 'mongo', svg: MongoSVG() };
 
-    const technologyIcons = [
-        javaScript,
-        react,
-        node,
-        flutter,
-        firebase,
-        docker,
-    ];
+    const technologyIcons = [javaScript, react, node, flutter, firebase, mongo];
 
     const [showDetails, setShowDetails] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -48,14 +40,14 @@ export default function GetPictureTiles({
 
         let lightTile = false;
 
-        if(window.innerWidth < 800) {
-            if(index % 2) {
+        if (window.innerWidth < 800) {
+            if (index % 2) {
                 lightTile = false;
             } else {
                 lightTile = true;
             }
         } else {
-            if(index % 4 === 0 || index % 4 === 3) {
+            if (index % 4 === 0 || index % 4 === 3) {
                 lightTile = true;
             } else {
                 lightTile = false;
@@ -82,24 +74,36 @@ export default function GetPictureTiles({
             return projectTech.map(tech => tech.svg);
         }
 
+        function displayWebsiteLink() {
+            if (project.website !== null) {
+                return (
+                    <div className='link website'>
+                        <a href={project.website} target='_blank' rel='noopener noreferrer'>
+                            <button>
+                                <h3>WEBSITE</h3>
+                            </button>
+                        </a>
+                    </div>
+                );
+            }
+        }
+
         function displayLinks() {
             if (isExpanded || showDetails) {
                 return (
                     <div className='project-links'>
                         <div className='link github'>
-                            <a href='https://www.google.com' target='_blank' rel="noopener noreferrer">
+                            <a
+                                href={project.github}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
                                 <button>
                                     <h3>GITHUB</h3>
                                 </button>
                             </a>
                         </div>
-                        <div className='link website'>
-                            <a href='https://www.google.com' target='_blank' rel="noopener noreferrer">
-                                <button>
-                                    <h3>WEBSITE</h3>
-                                </button>
-                            </a>
-                        </div>
+                        {displayWebsiteLink()}
                     </div>
                 );
             }
@@ -125,7 +129,7 @@ export default function GetPictureTiles({
                 return (
                     <div
                         className='close-button'
-                        onClick={() => toggleTileExpand(4)}
+                        onClick={() => toggleTileExpand(null)}
                     >
                         {CloseButton()}
                     </div>
@@ -178,9 +182,17 @@ export default function GetPictureTiles({
                 >
                     {infoButton()}
                     {displayCloseButton()}
-                    <img id='pic-1' src={lightTile ? project.light1 : project.dark1} alt='' />
+                    <img
+                        id='pic-1'
+                        src={lightTile ? project.light1 : project.dark1}
+                        alt=''
+                    />
                     <div className='project-details'>
-                        <img id='pic-2' src={lightTile ? project.light2 : project.dark2} alt='' />
+                        <img
+                            id='pic-2'
+                            src={lightTile ? project.light2 : project.dark2}
+                            alt=''
+                        />
                         <div className='project-description'>
                             <div className='project-title'>
                                 <h2>{project.title}</h2>

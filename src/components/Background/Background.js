@@ -1,6 +1,6 @@
 import React from 'react';
 import bg from '../../assets/images/background_4.png';
-import DockerSVG from '../../assets/SVGs/Docker';
+import DockerSVG from '../../assets/SVGs/MongoDB';
 import FirebaseSVG from '../../assets/SVGs/Firebase';
 import ReactSVG from '../../assets/SVGs/React';
 import JavaScriptSVG from '../../assets/SVGs/JavaScript';

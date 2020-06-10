@@ -14,8 +14,12 @@ import paperWeather1 from '../../assets/images/paper_weather_light_1.png';
 import paperWeather2 from '../../assets/images/paper_weather_light_2.png';
 import paperWeather3 from '../../assets/images/paper_weather_dark_1.png';
 import paperWeather4 from '../../assets/images/paper_weather_dark_2.png';
+import ljb1 from '../../assets/images/ljb_light_1.png';
+import ljb2 from '../../assets/images/ljb_light_2.png';
+import ljb3 from '../../assets/images/ljb_dark_1.png';
+import ljb4 from '../../assets/images/ljb_dark_2.png';
 
-export default function ImportedProjects(tileOneExpanded, tileTwoExpanded, tileThreeExpanded, tileFourExpanded) {
+export default function ImportedProjects(tileOneExpanded, tileTwoExpanded, tileThreeExpanded, tileFourExpanded, tileFiveExpanded) {
 
 const projects = [
     {
@@ -27,6 +31,8 @@ const projects = [
         dark2: f4y4,
         isExpanded: tileOneExpanded,
         technologies: ['flutter', 'firebase'],
+        github: 'https://github.com/lexjames06/fit-4-you-app',
+        website: null,
     },
     {
         title: 'Kodflix',
@@ -35,8 +41,10 @@ const projects = [
         light2: kodflix2,
         dark1: kodflix3,
         dark2: kodflix4,
-        isExpanded: tileThreeExpanded,
+        isExpanded: tileTwoExpanded,
         technologies: ['javascript', 'react', 'node'],
+        github: 'https://github.com/lexjames06/kodflix',
+        website: 'http://kodflix-lj.herokuapp.com/kodflix',
     },
     {
         title: 'Paper Weather',
@@ -45,8 +53,10 @@ const projects = [
         light2: paperWeather2,
         dark1: paperWeather3,
         dark2: paperWeather4,
-        isExpanded: tileTwoExpanded,
+        isExpanded: tileThreeExpanded,
         technologies: ['flutter'],
+        github: 'https://github.com/lexjames06/paper-weather',
+        website: null,
     },
     {
         title: 'The Quiet Room',
@@ -57,6 +67,20 @@ const projects = [
         dark2: tile_3,
         isExpanded: tileFourExpanded,
         technologies: ['flutter', 'firebase'],
+        github: 'https://github.com/lexjames06/the-quiet-room',
+        website: null,
+    },
+    {
+        title: 'Lex James Blogs',
+        description: 'A simple blog website',
+        light1: ljb1,
+        light2: ljb2,
+        dark1: ljb3,
+        dark2: ljb4,
+        isExpanded: tileFiveExpanded,
+        technologies: ['javascript', 'react', 'node', 'mongo'],
+        github: 'https://github.com/lexjames06/lex-james-blogs',
+        website: null,
     },
 ];
 

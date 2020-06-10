@@ -75,8 +75,8 @@
 }
 
 .gallery.tile[name='true'] {
-    width: 90vw;
-    height: 50.6vw;
+    width: 78vw;
+    height: 43.9vw;
 }
 
 .gallery.tile[name='hidden'] {
@@ -148,6 +148,8 @@
 
 .project-details {
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 150%;
 }
@@ -339,6 +341,9 @@
     }
     .sidebar h3 {
         padding: 5px;
+    }
+    .gallery.tile .close-button {
+        right: 11%;
     }
     .options {
         min-width: 80px;

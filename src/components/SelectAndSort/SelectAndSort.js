@@ -12,6 +12,8 @@ export default function SelectAndSort({
         items.sort((a, b) => (a.selectedStatus > b.selectedStatus ? -1 : 1));
 
         return items.map((item, index) => {
+            let name = item.name === 'Mongo' ? 'MongoDB' : item.name;
+
             if (index === 0) {
                 return (
                     <div
@@ -20,7 +22,7 @@ export default function SelectAndSort({
                         onClick={toggleSidebar}
                         key={index}
                     >
-                        <h3>{item.name}</h3>
+                        <h3>{name}</h3>
                     </div>
                 );
             } else {
@@ -34,7 +36,7 @@ export default function SelectAndSort({
                             toggleProjects();
                         }}
                     >
-                        <h3>{item.name}</h3>
+                        <h3>{name}</h3>
                     </div>
                 );
             }
@@ -42,6 +44,9 @@ export default function SelectAndSort({
     }
 
     return items.map((item, index) => {
+
+        let name = item.name === 'Mongo' ? 'MongoDB' : item.name;
+
         return (
             <div
                 className='option'
@@ -52,7 +57,7 @@ export default function SelectAndSort({
                     toggleProjects();
                 }}
             >
-                <h3>{item.name}</h3>
+                <h3>{name}</h3>
             </div>
         );
     });

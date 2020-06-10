@@ -11,14 +11,16 @@ export default function Gallery() {
     const [tileTwoExpanded, setTileTwoExpanded] = useState(false);
     const [tileThreeExpanded, setTileThreeExpanded] = useState(false);
     const [tileFourExpanded, setTileFourExpanded] = useState(false);
+    const [tileFiveExpanded, setTileFiveExpanded] = useState(false);
 
-    const projects = ImportedProjects(tileOneExpanded, tileTwoExpanded, tileThreeExpanded, tileFourExpanded);
+    const projects = ImportedProjects(tileOneExpanded, tileTwoExpanded, tileThreeExpanded, tileFourExpanded, tileFiveExpanded);
 
     function toggleTileExpand(selectedIndex) {
         setTileOneExpanded(selectedIndex === 0 ? true : false);
         setTileTwoExpanded(selectedIndex === 1 ? true : false);
         setTileThreeExpanded(selectedIndex === 2 ? true : false);
         setTileFourExpanded(selectedIndex === 3 ? true : false);
+        setTileFiveExpanded(selectedIndex === 4 ? true : false);
     }
 
     const [javaScriptSelected, setJavaScriptSelected] = useState(false);
@@ -26,7 +28,7 @@ export default function Gallery() {
     const [flutterSelected, setFlutterSelected] = useState(false);
     const [nodeSelected, setNodeSelected] = useState(false);
     const [firebaseSelected, setFirebaseSelected] = useState(false);
-    const [dockerSelected, setDockerSelected] = useState(false);
+    const [mongoSelected, setMongoSelected] = useState(false);
     const [allTechSelected, setAllTechSelected] = useState(true);
 
     const technologies = [
@@ -35,7 +37,7 @@ export default function Gallery() {
         { name: 'Flutter', selectedStatus: flutterSelected },
         { name: 'Node', selectedStatus: nodeSelected },
         { name: 'Firebase', selectedStatus: firebaseSelected },
-        { name: 'Docker', selectedStatus: dockerSelected },
+        { name: 'Mongo', selectedStatus: mongoSelected },
         { name: 'All', selectedStatus: allTechSelected },
     ];
 
@@ -55,7 +57,7 @@ export default function Gallery() {
         setFlutterSelected(techClicked === 'Flutter' ? true : false);
         setNodeSelected(techClicked === 'Node' ? true : false);
         setFirebaseSelected(techClicked === 'Firebase' ? true : false);
-        setDockerSelected(techClicked === 'Docker' ? true : false);
+        setMongoSelected(techClicked === 'Mongo' ? true : false);
         setAllTechSelected(techClicked === 'All' ? true : false);
 
         setSiderbarOpen(false);
