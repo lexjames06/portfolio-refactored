@@ -397,7 +397,7 @@ button#true:hover h3 {
 
 @media (max-width: 850px) {
     .mobile-expand-details#true {
-        height: 400px;
+        height: 350px;
     }
     .gallery.tile[name='false']:hover {
         transform: none;
