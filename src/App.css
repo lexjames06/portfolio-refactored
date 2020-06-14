@@ -16,3 +16,6 @@ a {
     /* overflow: hidden; */
 }
 
+button:focus {
+    outline: none;
+}

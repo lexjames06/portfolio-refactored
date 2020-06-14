@@ -27,11 +27,12 @@ export default function GetPictureTiles({
     const [showTile3Details, setShowTile3Details] = useState(false);
     const [showTile4Details, setShowTile4Details] = useState(false);
     const [showTile5Details, setShowTile5Details] = useState(false);
+    const [showTile6Details, setShowTile6Details] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     let projectsToMap = [];
 
-    let showDetails = showTile1Details || showTile2Details || showTile3Details || showTile4Details || showTile5Details;
+    let showDetails = showTile1Details || showTile2Details || showTile3Details || showTile4Details || showTile5Details || showTile6Details;
 
     let projectsDetailsVisibility = [
         showTile1Details,
@@ -39,6 +40,7 @@ export default function GetPictureTiles({
         showTile3Details,
         showTile4Details,
         showTile5Details,
+        showTile6Details,
     ];
 
     if (selectedTech !== 'all') {
@@ -161,7 +163,7 @@ export default function GetPictureTiles({
                     <div className='project-title'>
                         <h2>{project.title}</h2>
                     </div>
-                    <h4>{project.description}</h4>
+                    <h4>{project.longDescription}</h4>
                     <div className='tech-bar'>{displayTechBar()}</div>
                     {displayLinks()}
                 </div>
@@ -169,18 +171,19 @@ export default function GetPictureTiles({
         }
 
         function mobileExpand(chosenIndex) {
-            if (window.innerWidth < 1000) {
+            if (window.innerWidth < 850) {
                 setShowTile1Details(chosenIndex === 0 ? showTile1Details === true ? false : true : false);
                 setShowTile2Details(chosenIndex === 1 ? showTile2Details === true ? false : true : false);
                 setShowTile3Details(chosenIndex === 2 ? showTile3Details === true ? false : true : false);
                 setShowTile4Details(chosenIndex === 3 ? showTile4Details === true ? false : true : false);
                 setShowTile5Details(chosenIndex === 4 ? showTile5Details === true ? false : true : false);
+                setShowTile6Details(chosenIndex === 5 ? showTile6Details === true ? false : true : false);
                 setSelectedIndex(chosenIndex);
             }
         }
 
         function infoButton() {
-            if (window.innerWidth < 1000) {
+            if (window.innerWidth < 850) {
                 return (
                     <div className='info-button'>
                         <InfoButton />
@@ -215,7 +218,7 @@ export default function GetPictureTiles({
                             <div className='project-title'>
                                 <h2>{project.title}</h2>
                             </div>
-                            <h4>{project.description}</h4>
+                            <h4>{isExpanded ? project.longDescription : project.shortDescription}</h4>
                             <div className='tech-bar'>{displayTechBar()}</div>
                             {displayExpand()}
                             {displayLinks()}

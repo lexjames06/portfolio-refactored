@@ -21,9 +21,9 @@
 
 .sidebar {
     box-sizing: border-box;
-    height: auto;
-    max-width: calc(50% - 400px);
-    width: 15%;
+    height: 50vh;
+    max-width: calc(100vw - 400px);
+    width: 15vw;
     display: flex;
     flex-direction: column;
     text-align: right;
@@ -135,11 +135,13 @@
 
 .gallery.tile[name='true'] .project-description {
     opacity: 1;
-    margin: 0px -300px 0px 0px;
+    margin-left: -2vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
+    width: 50%;
+    padding-right: 5vw;
 }
 
 .gallery.tile#true .project-description h2,
@@ -289,17 +291,18 @@
 }
 
 .mobile-expand-details h4 {
-    margin: 0;
+    margin: 20px 0;
 }
 
 .mobile-expand-details .tech-bar {
     border: none;
     padding: 0;
+    margin: 0 0 20px;
 }
 
 .mobile-expand-details#true {
-    height: 200px;
-    width: auto;
+    height: 250px;
+    width: 80vw;
 }
 
 .mobile-expand-details svg {
@@ -307,7 +310,7 @@
 }
 
 .mobile-expand-details button {
-    margin: 0 10px;
+    margin: 0 10px 20px;
 }
 
 .gallery.tile .info-button {
@@ -384,6 +387,9 @@
 }
 
 @media (max-width: 850px) {
+    .mobile-expand-details#true {
+        height: 300px;
+    }
     .gallery.tile[name='false']:hover {
         transform: none;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -412,6 +418,9 @@
 }
 
 @media (max-width: 600px) {
+    .mobile-expand-details {
+        width: 80vw;
+    }
     .gallery.inner-container {
         flex-wrap: nowrap;
         flex-direction: column;
@@ -424,5 +433,9 @@
     .gallery.tile .info-button {
         right: 12%;
         height: 25px;
+    }
+    .project-details {
+        height: 0;
+        width: 0;
     }
 }

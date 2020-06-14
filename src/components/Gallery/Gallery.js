@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-
 import './Gallery.css';
 import GetPictureTiles from './GetPictureTiles';
 import SelectAndSort from '../SelectAndSort/SelectAndSort';
-import ImportedProjects from '../Data/projects'
+import ImportedProjects from '../Data/projects';
 
 export default function Gallery() {
     const [tileOneExpanded, setTileOneExpanded] = useState(false);
@@ -12,8 +11,16 @@ export default function Gallery() {
     const [tileThreeExpanded, setTileThreeExpanded] = useState(false);
     const [tileFourExpanded, setTileFourExpanded] = useState(false);
     const [tileFiveExpanded, setTileFiveExpanded] = useState(false);
+    const [tileSixExpanded, setTileSixExpanded] = useState(false);
 
-    const projects = ImportedProjects(tileOneExpanded, tileTwoExpanded, tileThreeExpanded, tileFourExpanded, tileFiveExpanded);
+    const projects = ImportedProjects(
+        tileOneExpanded,
+        tileTwoExpanded,
+        tileThreeExpanded,
+        tileFourExpanded,
+        tileFiveExpanded,
+        tileSixExpanded
+    );
 
     function toggleTileExpand(selectedIndex) {
         setTileOneExpanded(selectedIndex === 0 ? true : false);
@@ -21,6 +28,7 @@ export default function Gallery() {
         setTileThreeExpanded(selectedIndex === 2 ? true : false);
         setTileFourExpanded(selectedIndex === 3 ? true : false);
         setTileFiveExpanded(selectedIndex === 4 ? true : false);
+        setTileSixExpanded(selectedIndex === 5 ? true : false);
     }
 
     const [javaScriptSelected, setJavaScriptSelected] = useState(false);
@@ -71,7 +79,10 @@ export default function Gallery() {
         setSelectedTech(chosenTech.name.toLowerCase());
     }
 
-    let toggleActiveProjects = useCallback(() => toggleProjects(), [selectedTech, technologies]);
+    let toggleActiveProjects = useCallback(() => toggleProjects(), [
+        selectedTech,
+        technologies,
+    ]);
 
     useEffect(() => {
         toggleActiveProjects();
@@ -107,7 +118,6 @@ export default function Gallery() {
                         toggleTileExpand={selectedIndex =>
                             toggleTileExpand(selectedIndex)
                         }
-                        
                     />
                 </div>
             </div>
