@@ -96,7 +96,7 @@ export default function GetPictureTiles({
                     <div className='link website'>
                         <a href={project.website} target='_blank' rel='noopener noreferrer'>
                             <button>
-                                <h3>WEBSITE</h3>
+                                <h3 id={lightTile ? 'true' : 'false'}>WEBSITE</h3>
                             </button>
                         </a>
                     </div>
@@ -114,7 +114,7 @@ export default function GetPictureTiles({
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
-                                <button>
+                                <button id={lightTile ? 'true' : 'false'}>
                                     <h3>GITHUB</h3>
                                 </button>
                             </a>
@@ -132,7 +132,7 @@ export default function GetPictureTiles({
                         className='project-expand'
                         onClick={() => toggleTileExpand(index)}
                     >
-                        <button>
+                        <button id={lightTile ? 'true' : 'false'}>
                             <h3>LEARN MORE</h3>
                         </button>
                     </div>

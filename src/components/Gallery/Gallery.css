@@ -215,6 +215,14 @@
     align-self: center;
 }
 
+button#true:hover {
+    border-color: white;
+}
+
+button#true:hover h3 {
+    color: white;
+}
+
 .project-expand button {
     background-color: transparent;
     border: 1px solid #04bccb;
