@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import basketballImage from '../../assets/images/basketball.png';
 import podcastImage from '../../assets/images/podcast.png';
 import codingImage from '../../assets/images/coding.png';
@@ -82,6 +82,10 @@ export default function AboutMe() {
             </div>
         );
     }
+
+    useEffect(() => {
+
+    }, [selectedIcon])
 
     return (
         <div className='about-me outer-container' id='about'>

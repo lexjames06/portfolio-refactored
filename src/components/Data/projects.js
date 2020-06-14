@@ -43,7 +43,7 @@ export default function ImportedProjects(
             dark2: f4y4,
             isExpanded: tileOneExpanded,
             technologies: ['flutter', 'firebase'],
-            github: 'https://github.com/lexjames06/fit-4-you-app',
+            github: 'preview',
             website: null,
         },
         {

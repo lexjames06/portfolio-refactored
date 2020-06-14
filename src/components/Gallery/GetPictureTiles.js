@@ -110,12 +110,12 @@ export default function GetPictureTiles({
                     <div className='project-links'>
                         <div className='link github'>
                             <a
-                                href={project.github}
+                                href={project.github !== 'preview' ? project.github : 'https://youtu.be/2L-gl3ftnmc'}
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
                                 <button id={lightTile ? 'true' : 'false'}>
-                                    <h3>GITHUB</h3>
+                                    <h3>{project.github !== 'preview' ? 'GITHUB' : 'PREVIEW'}</h3>
                                 </button>
                             </a>
                         </div>
