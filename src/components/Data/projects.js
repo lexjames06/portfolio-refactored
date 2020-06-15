@@ -36,7 +36,7 @@ export default function ImportedProjects(
             title: 'Fit-4-You',
             shortDescription: 'A fitness phone app',
             longDescription:
-                'Fit-4-You is a passion project of mine. The aim is to create a tool that personal trainers and coaches can use to give their clients a better experience, while simultaneously creating a public access platform for to help give direction to those without someone leading them.',
+                'This is a passion project of mine. The aim is to create a tool that personal trainers and coaches can use to give their clients a better experience, while simultaneously creating a public access platform to give direction for those that feel they don\'t need support.',
             light1: f4y1,
             light2: f4y2,
             dark1: f4y3,
@@ -50,7 +50,7 @@ export default function ImportedProjects(
             title: 'Lex James Blogs',
             shortDescription: 'A simple blog website',
             longDescription:
-                'A blog website with all CRUD operations, and markup language supported in both creating and reading blogs to make for any easier blogging experience.',
+                'A website with all CRUD operations, and markup language supported in both creating and reading blogs, to make for an easier blogging experience.',
             light1: ljb1,
             light2: ljb2,
             dark1: ljb3,
@@ -63,7 +63,7 @@ export default function ImportedProjects(
         {
             title: 'Paper Weather',
             shortDescription: 'A simple weather phone app',
-            longDescription: 'A complementary complimentary weather app. While you quickly go to Paper Weather to check the week\'s forcast, why not be complimented at the same time and give yourself a little self-esteem boost? With every weather refresh, Paper Weather gives you a new compliment.',
+            longDescription: 'A novel complementary complimentary weather app. While you quickly go to Paper Weather to check the week\'s forcast, why not be complimented at the same time and give yourself a little self-esteem boost? With every weather refresh, Paper Weather gives you a new compliment.',
             light1: paperWeather1,
             light2: paperWeather2,
             dark1: paperWeather3,
@@ -76,7 +76,7 @@ export default function ImportedProjects(
         {
             title: 'The Quiet Room',
             shortDescription: 'A real-time chat app',
-            longDescription: 'One of the quietest chat rooms around, The Quiet Room is a project-only chat app that sends messages between multiple users in real-time and stores the conversation for later when you want to pick back up.',
+            longDescription: 'One of the quietest chat rooms around, The Quiet Room is a project-only chat app that sends messages between multiple users in real-time and stores the conversation for later, when you want to pick back up.',
             light1: quiet1,
             light2: quiet2,
             dark1: quiet3,
