@@ -22,6 +22,14 @@ import ljb1 from '../../assets/images/ljb_light_1.png';
 import ljb2 from '../../assets/images/ljb_light_2.png';
 import ljb3 from '../../assets/images/ljb_dark_1.png';
 import ljb4 from '../../assets/images/ljb_dark_2.png';
+import ljc1 from '../../assets/images/ljc_light_1.png';
+import ljc2 from '../../assets/images/ljc_light_2.png';
+import ljc3 from '../../assets/images/ljc_dark_1.png';
+import ljc4 from '../../assets/images/ljc_dark_2.png';
+import ku1 from '../../assets/images/ku_light_1.png';
+import ku2 from '../../assets/images/ku_light_2.png';
+import ku3 from '../../assets/images/ku_dark_1.png';
+import ku4 from '../../assets/images/ku_dark_2.png';
 
 export default function ImportedProjects(
     tileOneExpanded,
@@ -29,7 +37,9 @@ export default function ImportedProjects(
     tileThreeExpanded,
     tileFourExpanded,
     tileFiveExpanded,
-    tileSixExpanded
+    tileSixExpanded,
+    tileSevenExpanded,
+    tileEightExpanded
 ) {
     const projects = [
         {
@@ -43,22 +53,22 @@ export default function ImportedProjects(
             dark2: f4y4,
             isExpanded: tileOneExpanded,
             technologies: ['flutter', 'firebase'],
-            github: 'preview',
-            website: null,
+            github: 'https://youtu.be/2L-gl3ftnmc',
+            website: 'preview',
         },
         {
-            title: 'Lex James Blogs',
-            shortDescription: 'A simple blog website',
+            title: 'LJ CLothing',
+            shortDescription: 'A demo clothing e-commerce store',
             longDescription:
-                'A website with all CRUD operations, and markup language supported in both creating and reading blogs, to make for an easier blogging experience.',
-            light1: ljb1,
-            light2: ljb2,
-            dark1: ljb3,
-            dark2: ljb4,
+                'Built primarily to learn more technologies, including Redux, GraphQL, and Context API. Once finished, more consideration will be placed on design and mobile responsiveness.',
+            light1: ljc1,
+            light2: ljc2,
+            dark1: ljc3,
+            dark2: ljc4,
             isExpanded: tileTwoExpanded,
-            technologies: ['javascript', 'react', 'node', 'mongo'],
-            github: 'https://github.com/lexjames06/lex-james-blogs',
-            website: null,
+            technologies: ['javascript', 'react', 'redux'],
+            github: 'https://github.com/lexjames06/demo-clothing-store',
+            website: 'http://lj-clothing.herokuapp.com/',
         },
         {
             title: 'Paper Weather',
@@ -111,6 +121,34 @@ export default function ImportedProjects(
             technologies: ['flutter'],
             github: 'https://github.com/lexjames06/bmi-calculator',
             website: null,
+        },
+        {
+            title: 'Lex James Blogs',
+            shortDescription: 'A simple blog website',
+            longDescription:
+                'A website with all CRUD operations, and markup language supported in both creating and reading blogs, to make for an easier blogging experience.',
+            light1: ljb1,
+            light2: ljb2,
+            dark1: ljb3,
+            dark2: ljb4,
+            isExpanded: tileSevenExpanded,
+            technologies: ['javascript', 'react', 'node', 'mongo'],
+            github: 'https://github.com/lexjames06/lex-james-blogs',
+            website: null,
+        },
+        {
+            title: 'Keepie Uppie Challenge',
+            shortDescription: 'A basic game built in Scratch',
+            longDescription:
+                'While working through a HarvardX online introdutory Computer Science course, I was introduced to Scratch and challenged to create my own game.',
+            light1: ku1,
+            light2: ku2,
+            dark1: ku3,
+            dark2: ku4,
+            isExpanded: tileEightExpanded,
+            technologies: ['scratch'],
+            github: 'https://scratch.mit.edu/projects/409818003/',
+            website: 'preview',
         },
     ];
 

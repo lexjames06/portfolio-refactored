@@ -12,6 +12,8 @@ export default function Gallery() {
     const [tileFourExpanded, setTileFourExpanded] = useState(false);
     const [tileFiveExpanded, setTileFiveExpanded] = useState(false);
     const [tileSixExpanded, setTileSixExpanded] = useState(false);
+    const [tileSevenExpanded, setTileSevenExpanded] = useState(false);
+    const [tileEightExpanded, setTileEightExpanded] = useState(false);
 
     const projects = ImportedProjects(
         tileOneExpanded,
@@ -19,7 +21,9 @@ export default function Gallery() {
         tileThreeExpanded,
         tileFourExpanded,
         tileFiveExpanded,
-        tileSixExpanded
+        tileSixExpanded,
+        tileSevenExpanded,
+        tileEightExpanded
     );
 
     function toggleTileExpand(selectedIndex) {
@@ -29,6 +33,8 @@ export default function Gallery() {
         setTileFourExpanded(selectedIndex === 3 ? true : false);
         setTileFiveExpanded(selectedIndex === 4 ? true : false);
         setTileSixExpanded(selectedIndex === 5 ? true : false);
+        setTileSevenExpanded(selectedIndex === 6 ? true : false);
+        setTileEightExpanded(selectedIndex === 7 ? true : false);
     }
 
     const [javaScriptSelected, setJavaScriptSelected] = useState(false);
@@ -37,6 +43,8 @@ export default function Gallery() {
     const [nodeSelected, setNodeSelected] = useState(false);
     const [firebaseSelected, setFirebaseSelected] = useState(false);
     const [mongoSelected, setMongoSelected] = useState(false);
+    const [reduxSelected, setReduxSelected] = useState(false);
+    const [scratchSelected, setScratchSelected] = useState(false);
     const [allTechSelected, setAllTechSelected] = useState(true);
 
     const technologies = [
@@ -46,6 +54,8 @@ export default function Gallery() {
         { name: 'Node', selectedStatus: nodeSelected },
         { name: 'Firebase', selectedStatus: firebaseSelected },
         { name: 'Mongo', selectedStatus: mongoSelected },
+        { name: 'Redux', selectedStatus: reduxSelected },
+        { name: 'Scratch', selectedStatus: scratchSelected },
         { name: 'All', selectedStatus: allTechSelected },
     ];
 
@@ -66,6 +76,8 @@ export default function Gallery() {
         setNodeSelected(techClicked === 'Node' ? true : false);
         setFirebaseSelected(techClicked === 'Firebase' ? true : false);
         setMongoSelected(techClicked === 'Mongo' ? true : false);
+        setReduxSelected(techClicked === 'Redux' ? true : false);
+        setScratchSelected(techClicked === 'Scratch' ? true : false);
         setAllTechSelected(techClicked === 'All' ? true : false);
 
         setSiderbarOpen(false);

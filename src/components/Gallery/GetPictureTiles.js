@@ -5,6 +5,7 @@ import NodeSVG from '../../assets/SVGs/Node';
 import FlutterSVG from '../../assets/SVGs/Flutter';
 import FirebaseSVG from '../../assets/SVGs/Firebase';
 import MongoSVG from '../../assets/SVGs/MongoDB';
+import ReduxSVG from '../../assets/SVGs/Redux';
 import CloseButton from '../../assets/icons/CloseButton';
 import InfoButton from '../../assets/icons/InfoButton';
 
@@ -19,8 +20,17 @@ export default function GetPictureTiles({
     const flutter = { name: 'flutter', svg: FlutterSVG() };
     const firebase = { name: 'firebase', svg: FirebaseSVG() };
     const mongo = { name: 'mongo', svg: MongoSVG() };
+    const redux = { name: 'redux', svg: ReduxSVG() };
 
-    const technologyIcons = [javaScript, react, node, flutter, firebase, mongo];
+    const technologyIcons = [
+        javaScript,
+        react,
+        node,
+        flutter,
+        firebase,
+        mongo,
+        redux,
+    ];
 
     const [showTile1Details, setShowTile1Details] = useState(false);
     const [showTile2Details, setShowTile2Details] = useState(false);
@@ -28,11 +38,21 @@ export default function GetPictureTiles({
     const [showTile4Details, setShowTile4Details] = useState(false);
     const [showTile5Details, setShowTile5Details] = useState(false);
     const [showTile6Details, setShowTile6Details] = useState(false);
+    const [showTile7Details, setShowTile7Details] = useState(false);
+    const [showTile8Details, setShowTile8Details] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     let projectsToMap = [];
 
-    let showDetails = showTile1Details || showTile2Details || showTile3Details || showTile4Details || showTile5Details || showTile6Details;
+    let showDetails =
+        showTile1Details ||
+        showTile2Details ||
+        showTile3Details ||
+        showTile4Details ||
+        showTile5Details ||
+        showTile6Details ||
+        showTile7Details ||
+        showTile8Details;
 
     let projectsDetailsVisibility = [
         showTile1Details,
@@ -41,6 +61,8 @@ export default function GetPictureTiles({
         showTile4Details,
         showTile5Details,
         showTile6Details,
+        showTile7Details,
+        showTile8Details,
     ];
 
     if (selectedTech !== 'all') {
@@ -91,12 +113,18 @@ export default function GetPictureTiles({
         }
 
         function displayWebsiteLink() {
-            if (project.website !== null) {
+            if (project.website !== null && project.website !== 'preview') {
                 return (
                     <div className='link website'>
-                        <a href={project.website} target='_blank' rel='noopener noreferrer'>
-                            <button>
-                                <h3 id={lightTile ? 'true' : 'false'}>WEBSITE</h3>
+                        <a
+                            href={project.website}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                        >
+                            <button id={lightTile ? 'true' : 'false'}>
+                                <h3>
+                                    WEBSITE
+                                </h3>
                             </button>
                         </a>
                     </div>
@@ -110,12 +138,16 @@ export default function GetPictureTiles({
                     <div className='project-links'>
                         <div className='link github'>
                             <a
-                                href={project.github !== 'preview' ? project.github : 'https://youtu.be/2L-gl3ftnmc'}
+                                href={project.github}
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
                                 <button id={lightTile ? 'true' : 'false'}>
-                                    <h3>{project.github !== 'preview' ? 'GITHUB' : 'PREVIEW'}</h3>
+                                    <h3>
+                                        {project.website !== 'preview'
+                                            ? 'GITHUB'
+                                            : 'PREVIEW'}
+                                    </h3>
                                 </button>
                             </a>
                         </div>
@@ -172,12 +204,62 @@ export default function GetPictureTiles({
 
         function mobileExpand(chosenIndex) {
             if (window.innerWidth < 850) {
-                setShowTile1Details(chosenIndex === 0 ? showTile1Details === true ? false : true : false);
-                setShowTile2Details(chosenIndex === 1 ? showTile2Details === true ? false : true : false);
-                setShowTile3Details(chosenIndex === 2 ? showTile3Details === true ? false : true : false);
-                setShowTile4Details(chosenIndex === 3 ? showTile4Details === true ? false : true : false);
-                setShowTile5Details(chosenIndex === 4 ? showTile5Details === true ? false : true : false);
-                setShowTile6Details(chosenIndex === 5 ? showTile6Details === true ? false : true : false);
+                setShowTile1Details(
+                    chosenIndex === 0
+                        ? showTile1Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile2Details(
+                    chosenIndex === 1
+                        ? showTile2Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile3Details(
+                    chosenIndex === 2
+                        ? showTile3Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile4Details(
+                    chosenIndex === 3
+                        ? showTile4Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile5Details(
+                    chosenIndex === 4
+                        ? showTile5Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile6Details(
+                    chosenIndex === 5
+                        ? showTile6Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile7Details(
+                    chosenIndex === 6
+                        ? showTile7Details === true
+                            ? false
+                            : true
+                        : false
+                );
+                setShowTile8Details(
+                    chosenIndex === 7
+                        ? showTile8Details === true
+                            ? false
+                            : true
+                        : false
+                );
                 setSelectedIndex(chosenIndex);
             }
         }
@@ -218,7 +300,11 @@ export default function GetPictureTiles({
                             <div className='project-title'>
                                 <h2>{project.title}</h2>
                             </div>
-                            <h4>{isExpanded ? project.longDescription : project.shortDescription}</h4>
+                            <h4>
+                                {isExpanded
+                                    ? project.longDescription
+                                    : project.shortDescription}
+                            </h4>
                             <div className='tech-bar'>{displayTechBar()}</div>
                             {displayExpand()}
                             {displayLinks()}

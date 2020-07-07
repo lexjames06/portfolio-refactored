@@ -21,7 +21,7 @@
 
 .sidebar {
     box-sizing: border-box;
-    height: 50vh;
+    height: 60vh;
     max-width: calc(100vw - 400px);
     width: 15vw;
     display: flex;
@@ -44,6 +44,7 @@
 
 .option {
     width: 100%;
+    cursor: pointer;
 }
 
 .sidebar .option[name='true'] {
@@ -230,6 +231,7 @@ button#true:hover h3 {
     padding: 5px 10px;
     margin: 0;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .project-expand button:hover {
@@ -258,6 +260,7 @@ button#true:hover h3 {
     padding: 10px 10px;
     margin: 20px 0 0;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .link button:hover {
@@ -275,12 +278,21 @@ button#true:hover h3 {
     color: black;
 }
 
+.link button#true:hover {
+    border: 1px solid white;
+}
+
+.link button#true:hover h3 {
+    color: white;
+}
+
 .gallery.tile .close-button {
     height: 25px;
     position: absolute;
     right: 7%;
     margin-top: 10px;
     z-index: 3;
+    cursor: pointer;
 }
 
 .close-button svg {
@@ -385,7 +397,7 @@ button#true:hover h3 {
         margin-left: 60px;
     }
     .sidebar[id='true'] {
-        height: 325px;
+        height: 394px;
     }
     .sidebar .option[name='true'] {
         border-radius: 5px 5px 0 0;
